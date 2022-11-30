@@ -1,0 +1,32 @@
+﻿@model List<SchoolManagementSystem.Models.Session>
+@{
+	ViewData["Title"] = "List";
+}
+
+<table>
+
+	<tr>
+
+		<th>Id</th>
+		<th>Name</th>
+		<th>Actions</th>
+
+	</tr>
+
+
+	@for (int i = 0; i < Model.Count; i++)
+	{
+
+		<tr>
+
+			<td>@Model[i].SessionId</td>
+			<td>@Model[i].SessionName</td>
+			<td> <a href="@Url.Action("Delete", new{Id=@Model[i].SessionId})">  Delete</a>  </td>
+			<td>
+				<a href="@Url.Action("Index", new{@Model[i].SessionId,
+		@Model[i].SessionName})"> Edit</a>
+			</td>
+		</tr>
+	}
+
+</table>

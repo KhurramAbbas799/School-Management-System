@@ -1,0 +1,20 @@
+﻿@model SchoolManagementSystem.Models.Timing
+@{
+	ViewData["Title"] = "Timing";
+}
+<form method="post" asp-action="AddTiming">
+
+	<label>Timing Name</label>
+	<input type="hidden" asp-for="TimingId" />
+	<input type="text" asp-for="TimingName" />
+	<br />
+
+
+
+	<button type="submit">Submit</button>
+</form>
+@*@using(Html.BeginForm("AddStudent","Student",@FormMethod.Post))
+{
+	<lable>Student Name</lable>
+	@Html.TextBoxFor(x=>x.StudentName);
+}*@

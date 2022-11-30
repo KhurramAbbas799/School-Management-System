@@ -1,0 +1,32 @@
+﻿@model List<SchoolManagementSystem.Models.Timing>
+@{
+	ViewData["Title"] = "List";
+}
+
+<table>
+
+	<tr>
+
+		<th>Id</th>
+		<th>Name</th>
+
+	</tr>
+
+
+	@for (int i = 0; i < Model.Count; i++)
+	{
+
+		<tr>
+
+			<td>@Model[i].TimingId</td>
+			<td>@Model[i].TimingName</td>
+			<td> <a href="@Url.Action("Delete", new{Id=@Model[i].TimingId})">  Delete</a>  </td>
+			<td>
+				<a href="@Url.Action("Index", new{@Model[i].TimingId,
+		@Model[i].TimingName})"> Edit</a>
+			</td>
+			 
+		</tr>
+	}
+
+</table>

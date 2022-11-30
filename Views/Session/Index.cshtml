@@ -1,0 +1,20 @@
+﻿@model SchoolManagementSystem.Models.Session
+@{
+	ViewData["Title"] = "Session";
+}
+<form method="post" asp-action="AddSession">
+
+	<label>Session Name</label>
+	<input type="hidden" asp-for="SessionId" />
+	<input type="text" asp-for="SessionName" />
+	<br />
+
+
+
+	<button type="submit">Submit</button>
+</form>
+@*@using(Html.BeginForm("AddStudent","Student",@FormMethod.Post))
+{
+	<lable>Student Name</lable>
+	@Html.TextBoxFor(x=>x.StudentName);
+}*@

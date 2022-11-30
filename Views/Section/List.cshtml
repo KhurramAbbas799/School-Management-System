@@ -1,0 +1,31 @@
+﻿@model List<SchoolManagementSystem.Models.Section>
+@{
+	ViewData["Title"] = "List";
+}
+
+<table>
+
+	<tr>
+
+		<th>Id</th>
+		<th>Name</th>
+		<th>Actions</th>
+
+	</tr>
+
+
+	@for (int i = 0; i < Model.Count; i++)
+	{
+
+		<tr>
+
+			<td>@Model[i].SectionId</td>
+			<td>@Model[i].SectionName</td>
+			<td> <a href="@Url.Action("Delete", new{Id=@Model[i].SectionId})"> 
+				Delete</a>  </td>
+			<td>  <a href="@Url.Action("Index", new{@Model[i].SectionId,
+		@Model[i].SectionName})"> Edit</a>   </td>
+		</tr>
+	}
+
+</table>

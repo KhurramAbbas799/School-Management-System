@@ -1,0 +1,74 @@
+﻿@model List<SchoolManagementSystem.DTO.Dto>
+@{
+	ViewData["Title"] = "List";
+}
+
+<table>
+
+	<tr>
+
+
+		<th>RiderId</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		
+		<th>Contact</th>
+		
+		<th>CNIC</th>
+		<th>Address</th>
+		<th>Transport Type</th>
+		<th>UserId</th>
+		
+		
+		<th>Name</th>
+		<th>Password</th>
+		<th>Email</th>
+		<th>CNIC</th>
+
+		<th>Actions</th>
+	
+
+	</tr>
+
+
+	@for (int i = 0; i < Model.Count; i++)
+	{
+
+		<tr>
+
+			<td>@Model[i].RiderId</td>
+			<td>@Model[i].FirstName</td>
+            <td>@Model[i].LastName</td>
+			<td>@Model[i].Email</td>
+			<td>@Model[i].Contact</td>
+			<td>@Model[i].CNIC</td>
+			<td>@Model[i].Address</td>
+			<td>@Model[i].TransportType</td>
+			<td>@Model[i].UserId</td>
+			
+			
+			<td>@Model[i].UserName</td>
+		    <td>@Model[i].Password</td>
+			<td>@Model[i].Email</td>
+		    <td>@Model[i].CNIC</td>
+		
+			<td>
+				<a href="@Url.Action("Index", new{@Model[i].RiderId,
+		@Model[i].FirstName, @Model[i].LastName, @Model[i].Email,
+                @Model[i].Contact, @Model[i].CNIC, @Model[i].Address,
+				@Model[i].TransportType, @Model[i].UserId, @Model[i].UserName,
+				@Model[i].Password
+				})"> Edit</a>
+			</td>
+
+			<td>
+				<a href="@Url.Action("Delete", new{Id=@Model[i].RiderId})">  Delete</a>
+			</td>
+
+		</tr>
+	}
+
+</table>
+
+

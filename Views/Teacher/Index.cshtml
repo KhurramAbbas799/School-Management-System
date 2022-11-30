@@ -1,0 +1,34 @@
+﻿@model SchoolManagementSystem.Models.Teacher
+@{
+	ViewData["Title"] = "Teacher";
+}
+<form method="post" asp-action="AddTeacher">
+
+	<label>Teacher Name</label>
+	<input type="hidden" asp-for="TeacherId" />
+	<input type="text" asp-for="TeacherName" />
+	<br />
+
+	
+
+	<label>Teacher Email</label>
+	<input type="text" asp-for="TeacherEmail" />
+	<br />
+
+	<label>Teacher Contact</label>
+	<input type="text" asp-for="TeacherContact" />
+	<br />
+
+	
+
+	<label>Teacher Gender</label>
+	<input type="text" asp-for="TeacherGender" />
+	<br />
+
+	<button type="submit">Submit</button>
+</form>
+@*@using(Html.BeginForm("AddStudent","Student",@FormMethod.Post))
+{
+	<lable>Student Name</lable>
+	@Html.TextBoxFor(x=>x.StudentName);
+}*@

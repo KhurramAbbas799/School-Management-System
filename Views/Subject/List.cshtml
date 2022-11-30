@@ -1,0 +1,32 @@
+﻿@model List<SchoolManagementSystem.Models.Subject>
+@{
+	ViewData["Title"] = "Subject";
+}
+
+<table>
+
+	<tr>
+
+		<th>Id</th>
+		<th>Name</th>
+
+	</tr>
+
+
+	@for (int i = 0; i < Model.Count; i++)
+	{
+
+		<tr>
+
+			<td>@Model[i].SubjectId</td>
+			<td>@Model[i].SubjectName</td>
+			<td> <a href="@Url.Action("Delete", new{Id=@Model[i].SubjectId})">  Delete</a>
+			<td>
+				<a href="@Url.Action("Index", new{@Model[i].SubjectId,
+		@Model[i].SubjectName})"> Edit</a>
+			</td>
+
+		</tr>
+	}
+
+</table>

@@ -1,0 +1,20 @@
+﻿@model SchoolManagementSystem.Models.Subject
+@{
+	ViewData["Title"] = "Subject";
+}
+<form method="post" asp-action="AddSubject">
+
+	<label>Subject Name</label>
+	<input type="hidden" asp-for="SubjectId" />
+	<input type="text" asp-for="SubjectName" />
+	<br />
+
+
+
+	<button type="submit">Submit</button>
+</form>
+@*@using(Html.BeginForm("AddStudent","Student",@FormMethod.Post))
+{
+	<lable>Student Name</lable>
+	@Html.TextBoxFor(x=>x.StudentName);
+}*@

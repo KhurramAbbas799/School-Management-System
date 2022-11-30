@@ -1,0 +1,39 @@
+﻿@model SchoolManagementSystem.Models.Student
+@{
+	ViewData["Title"]="Student";
+}
+<form method="post" asp-action="AddStudent">
+	
+	<label>Student Name</label>
+	<input type="hidden" asp-for="StudentId" />
+	<input type="text" asp-for="StudentName" />
+	
+	<br />
+
+	<label>StudentAge </label>
+	<input type="text" asp-for="StudentAge"/>
+	<br />
+
+	<label>Student Email</label>
+	<input type="text" asp-for="StudentEmail" />
+	<br />
+	
+	<label>Student Contact</label>
+	<input type="text" asp-for="StudentContact" />
+	<br />
+	
+	<label>Father Name</label>
+	<input type="text" asp-for="FatherName" />
+	<br />
+	
+	<label>Gender</label>
+	<input type="text" asp-for="Gender" />
+	<br />
+	
+	<button type="submit">Submit</button>
+</form>
+@*@using(Html.BeginForm("AddStudent","Student",@FormMethod.Post))
+{	
+	<lable>Student Name</lable>
+	@Html.TextBoxFor(x=>x.StudentName);
+}*@

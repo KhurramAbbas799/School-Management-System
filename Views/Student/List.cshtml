@@ -1,0 +1,45 @@
+﻿@model List<SchoolManagementSystem.Models.Student>
+@{
+	ViewData["Title"] = "List";
+}
+
+<table>
+
+	<tr>
+
+		<th>Id</th>
+		<th>Name</th>
+		<th>Age</th>
+        <th>Email</th>
+		<th>Contact</th>
+		<th>FatherName</th>
+		<th>Gender</th>
+        <th>Actions</th>
+	</tr>
+
+
+@for (int i = 0; i < Model.Count; i++)
+	{
+
+		<tr>
+
+			<td>@Model[i].StudentId </td>
+			<td>@Model[i].StudentName </td>
+			<td>@Model[i].StudentAge </td>
+			<td>@Model[i].StudentEmail </td>
+			<td>@Model[i].StudentContact </td>
+			<td>@Model[i].FatherName </td>
+			<td>@Model[i].Gender </td>
+			
+			<td> <a href="@Url.Action("Delete", new{id=@Model[i].StudentId})">
+				Delete</a>  </td>
+			
+			<td> <a href="@Url.Action("Index", new{@Model[i].StudentId, 
+				@Model[i].StudentName, @Model[i].StudentAge, 
+				@Model[i].StudentEmail, @Model[i].StudentContact,
+				@Model[i].FatherName, @Model[i].Gender })"> Edit  </a>  </td>
+		
+			</tr>
+	}
+	
+</table>
